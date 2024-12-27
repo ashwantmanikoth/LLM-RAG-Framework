@@ -32,7 +32,7 @@ def build_prompt(user_input: str, context: str) -> str:
         "You are a Medical Plan Advisor with access to a limited dataset of plans. "
         "Provide direct, informative answers in the form of lists based solely on the provided context. "
         "Avoid mentioning the context explicitly and ensure responses are complete and professional. "
-        "\nContext: {context}.\n"
+        f"\nContext: {context}.\n"
         "If the context doesn't provide relevant information, respond with 'No relevant information found'."
         f"\nQuestion: {user_input}\n"
     )

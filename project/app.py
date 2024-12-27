@@ -7,7 +7,7 @@ from database.factory import get_repository
 # setup_database()
 repository = get_repository()
 feedback_service = FeedbackService(repository)
-
+# 
 
 def format_feedback_for_table() -> list[list]:
     """

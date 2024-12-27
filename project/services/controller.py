@@ -28,6 +28,7 @@ def process_input(user_input: str, model: str, zip_code: str) -> str:
 
     # 4. Build Prompt
     full_prompt = build_prompt(user_input, context)
+    print("full_prompt",full_prompt)
 
     # 5. Query LLM
     if model.startswith("gpt-4o"):
@@ -38,17 +39,3 @@ def process_input(user_input: str, model: str, zip_code: str) -> str:
         
 
     return response
-
-def run():
-    """
-    Example usage / CLI or UI entry point.
-    """
-    user_question = "Tell me about the benefits of plan X."
-    user_zip_code = "12345"
-    chosen_model = "ollama"  # or "gpt-4o", "gpt-3.5-turbo", etc.
-
-    answer = process_input(user_question, chosen_model, user_zip_code)
-    print(answer)
-
-if __name__ == "__main__":
-    run()

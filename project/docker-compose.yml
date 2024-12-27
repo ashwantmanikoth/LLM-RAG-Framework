@@ -24,3 +24,9 @@ services:
       - backend
     volumes:
       - ./ui:/app  # Optional for development
+
+  qdrant:
+    image: qdrant/qdrant
+    container_name: qdrant
+    ports:
+      - "6333:6333"  # Expose Qdrant's API

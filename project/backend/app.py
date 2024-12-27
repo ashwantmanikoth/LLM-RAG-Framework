@@ -18,6 +18,7 @@ def process():
     user_input = data.get("user_input")
     model = data.get("model")
     zip_code = data.get("zip_code")
+    print("starting process")
     if not user_input or not model or not zip_code:
         return jsonify({"error": "Missing required fields"}), 400
     response = process_input(user_input, model, zip_code)
@@ -41,4 +42,4 @@ def get_feedback():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5001)

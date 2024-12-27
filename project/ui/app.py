@@ -3,7 +3,7 @@
 import gradio as gr
 import requests
 
-BACKEND_URL = "http://localhost:5000"
+BACKEND_URL = "http://backend:5001"
 
 def process_input_ui(user_input, model, zip_code):
     response = requests.post(
@@ -50,4 +50,4 @@ with gr.Blocks() as app:
     feedback_button.click(retrieve_feedback, outputs=feedback_table)
 
 if __name__ == "__main__":
-    app.launch()
+    app.launch(server_name="0.0.0.0", server_port=7860)

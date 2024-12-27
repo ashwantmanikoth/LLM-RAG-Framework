@@ -7,9 +7,9 @@ def format_context(search_results: List[dict], max_length: int = 10000) -> str:
     for result in search_results:
         payload = result.payload
         field = payload.get("Field", "Unknown Field")
-        plan_id = payload.get("Plan ID", "Unknown Plan ID")
+        plan_name = payload.get("Plan_Name", "Unknown Plan ID")
         text = payload.get("Full Text", "No text available")
-        context += f"- {field}, {plan_id}: {text}\n"
+        context += f"- {field}, {plan_name}: {text}\n"
         
         if len(context) > max_length:
             break

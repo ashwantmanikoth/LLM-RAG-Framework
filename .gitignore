@@ -1,0 +1,12 @@
+.env
+project/utils/__pycache__/formatters.cpython-313.pyc
+project/services/__pycache__/ollama_service.cpython-313.pyc
+project/database/__pycache__/sqlite_feedback_repository.cpython-313.pyc
+project/database/__pycache__/feedback_service.cpython-313.pyc
+project/database/__pycache__/feedback_repository.cpython-313.pyc
+project/database/__pycache__/factory.cpython-313.pyc
+project/database/__pycache__/database.cpython-313.pyc
+project/.DS_Store
+README.md
+feedback.db
+.DS_Store

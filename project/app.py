@@ -1,6 +1,6 @@
 
 import gradio as gr
-from services.ollama_service import process_input
+from services.controller import process_input
 from database.feedback_service import FeedbackService
 from database.factory import get_repository
 

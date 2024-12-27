@@ -8,7 +8,7 @@ services:
       context: ./backend
     container_name: backend
     ports:
-      - "5000:5000"
+      - "5001:5001"
     volumes:
       - ./backend:/app  # Optional for development
     environment:

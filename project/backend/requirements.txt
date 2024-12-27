@@ -1,0 +1,5 @@
+flask               # To serve backend APIs
+qdrant-client       # To connect with Qdrant for vector database operations
+openai              # To integrate OpenAI's GPT or related APIs
+ollama              # For Ollama API interactions
+python-dotenv       # To manage environment variables

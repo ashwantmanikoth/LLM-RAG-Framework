@@ -13,7 +13,7 @@ load_dotenv()
 
 QDRANT_CLIENT = QdrantClient("http://localhost:6333")
 
-COLLECTION_NAME = "medical_plan_embeddings_v10_chunks_company"
+# COLLECTION_NAME = "medical_plan_embeddings_v10_chunks_company"
 
 openai_client = OpenAI(api_key=os.getenv("OPEN_API_KEY"))
 
@@ -68,6 +68,7 @@ def query_llm(prompt: str, context: str, model: str) -> str:
         "Avoid mentioning the context explicitly and ensure responses are complete and professional. "
         "\nContext:{context}.\n"
         "If the context doesn't provide relevant information, respond with 'No relevant information found'."
+        "Else if the Question is specific about a Plan, Give response in this format eg:- Company Name: XYZ, Plan Name: ABC, Plan Type: PPO, Deductible: $1000, Premium: $200"
         f"\nQuestion: {prompt}\n"
     )
 

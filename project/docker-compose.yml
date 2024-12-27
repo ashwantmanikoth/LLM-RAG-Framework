@@ -1,0 +1,26 @@
+# docker-compose.yml
+
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app  # Optional for development
+    environment:
+      - ENV=production
+
+  ui:
+    build:
+      context: ./ui
+    container_name: ui
+    ports:
+      - "7860:7860"
+    depends_on:
+      - backend
+    volumes:
+      - ./ui:/app  # Optional for development

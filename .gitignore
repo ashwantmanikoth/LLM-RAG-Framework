@@ -10,3 +10,13 @@ project/.DS_Store
 README.md
 feedback.db
 .DS_Store
+project/backend/database/__pycache__/factory.cpython-39.pyc
+project/backend/database/__pycache__/feedback_repository.cpython-39.pyc
+project/backend/database/__pycache__/feedback_service.cpython-39.pyc
+project/backend/database/__pycache__/sqlite_feedback_repository.cpython-39.pyc
+project/backend/services/__pycache__/controller.cpython-39.pyc
+project/backend/services/__pycache__/llm_service.cpython-39.pyc
+project/backend/services/__pycache__/qdrant_service.cpython-39.pyc
+project/backend/services/__pycache__/embedding_service.cpython-39.pyc
+project/backend/utils/__pycache__/formatters.cpython-39.pyc
+project/backend/utils/__pycache__/config.cpython-39.pyc

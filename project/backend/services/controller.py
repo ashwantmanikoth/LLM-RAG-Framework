@@ -11,7 +11,7 @@ def process_input(user_input: str, model: str, zip_code: str) -> str:
     """
     Orchestrates the entire flow:
     1. Generate embedding for user input.
-    2. Search Qdrant for relevant chunks using zip_code filter.
+    2. Search Qdrant for relevant chunks using zip_code filter,hybrid search with high result score.
     3. Format the returned context.
     4. Build a prompt and query the chosen LLM model.
     5. Return the final response.

@@ -12,12 +12,12 @@ repository = get_repository()
 feedback_service = FeedbackService(repository)
 
 @app.route("/delete", methods=["DELETE"])
-def delete_feedback():
+def delete_feedback() -> str:
     feedback_service.delete_feedback()
     return "History deleted."
 
 @app.route("/process", methods=["POST"])
-def process():
+def process()-> jsonify:
     data = request.json
     user_input = data.get("user_input")
     model = data.get("model")
@@ -30,7 +30,7 @@ def process():
 
 
 @app.route("/feedback", methods=["POST"])
-def add_feedback():
+def add_feedback()-> jsonify:
     data = request.json
     model = data.get("model")
     user_input = data.get("user_input")
@@ -40,7 +40,7 @@ def add_feedback():
 
 
 @app.route("/feedback", methods=["GET"])
-def get_feedback():
+def get_feedback()-> jsonify:
     feedback = feedback_service.get_feedback()
     return jsonify(feedback)
 

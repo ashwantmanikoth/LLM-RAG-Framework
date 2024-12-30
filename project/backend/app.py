@@ -11,6 +11,10 @@ app = Flask(__name__)
 repository = get_repository()
 feedback_service = FeedbackService(repository)
 
+@app.route("/delete", methods=["DELETE"])
+def delete_feedback():
+    feedback_service.delete_feedback()
+    return "History deleted."
 
 @app.route("/process", methods=["POST"])
 def process():

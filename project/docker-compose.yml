@@ -7,6 +7,8 @@ services:
     build:
       context: ./backend
     container_name: backend
+    depends_on:
+      - qdrant
     ports:
       - "5001:5001"
     volumes:
@@ -22,6 +24,8 @@ services:
       - "7860:7860"
     depends_on:
       - backend
+      - qdrant
+      - ollama
     volumes:
       - ./ui:/app  # Optional for development
 
@@ -30,3 +34,22 @@ services:
     container_name: qdrant
     ports:
       - "6333:6333"  # Expose Qdrant's API
+    volumes:
+      - qdrant_data:/qdrant/storage  # Persist Qdrant data
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollamaNew
+    environment:
+      - OLLAMA_MODELS=/root/.ollama/models  # Set the environment variable to the desired directory inside the container
+    volumes:
+      - ollama_models:/root/.ollama/models  # Mount the Docker volume to the directory specified by OLLAMA_MODELS
+    ports:
+      - "11434:11434"
+    depends_on:
+      - backend
+
+volumes:
+  qdrant_data:
+  ollama_models:
+    driver: local

@@ -2,7 +2,10 @@
 from services.embedding_service import generate_embedding
 from services.qdrant_service import search_qdrant
 from services.llm_service import build_prompt, query_llm_ollama, query_llm_openai
-from utils.formatters import format_context  # Assuming you have this from your original code.
+from utils.formatters import (
+    format_context,
+)  # Assuming you have this from your original code.
+
 
 def process_input(user_input: str, model: str, zip_code: str) -> str:
     """
@@ -19,7 +22,7 @@ def process_input(user_input: str, model: str, zip_code: str) -> str:
         return "Error generating embedding."
 
     # 2. Search Qdrant
-    search_results = search_qdrant(embedding, zip_code=zip_code, top_k=10)
+    search_results = search_qdrant(embedding, zip_code=zip_code, top_k=20)
     if not search_results:
         return "No relevant information found. Please ask another question."
 
@@ -28,14 +31,12 @@ def process_input(user_input: str, model: str, zip_code: str) -> str:
 
     # 4. Build Prompt
     full_prompt = build_prompt(user_input, context)
-    print("full_prompt",full_prompt)
+    print("full_prompt", full_prompt)
 
     # 5. Query LLM
     if model.startswith("gpt-4o"):
         response = query_llm_openai(full_prompt, model)
     else:
         response = query_llm_ollama(full_prompt, model)
-        
-        
 
     return response

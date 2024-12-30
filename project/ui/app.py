@@ -33,7 +33,7 @@ def delete_feedback():
 # Apply the custom theme to your app
 with gr.Blocks() as app:
     gr.Markdown("## The Medical Plan Advisor")
-    models = ["llama3.1:latest", "granite3-dense:8b", "gpt-4o"]
+    models = ["llama3.1:latest", "granite3-dense:8b", "mistral:7b", "gpt-4o"]
     locations = ["80001", "30002", "90001", "60005"]
 
     with gr.Row():

@@ -48,6 +48,8 @@ services:
       - "11434:11434"
     depends_on:
       - backend
+    command: >
+      bash -c "ollama install llama3.1:latest && exec ollama" # Installs llama3.1:latest and runs ollama, Add all LLM that you are planning to use and update the name in GradioUI
 
 volumes:
   qdrant_data:

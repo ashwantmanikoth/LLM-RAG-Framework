@@ -1,4 +1,4 @@
-# Python Project: Retrieval Augmented Generation with Local LLMs and Qdrant
+# Retrieval Augmented Generation with Local LLMs and Qdrant
 
 This project showcases an end-to-end implementation for integrating local language models (LLMs) with Qdrant Vector Database and a choice of relational database management systems (RDBMS). The default RDBMS is SQLite, but the implementation is flexible and can be adapted to other RDBMS based on specific use cases.
 
@@ -32,7 +32,7 @@ This project showcases an end-to-end implementation for integrating local langua
 
 ## Data Scraping
 
-The data needs to be ingested into the vector database based on your requirements. This project is based on medical plans, and a separate script was used to crawl and collect medical plans. However, this script is not included in the project. Other forms of applications can be created using this project by modifying the prompt and embedding flow.
+The data must be ingested into the vector database based on your requirements. This project is based on medical plans, and a separate script was used to crawl and collect medical plans. However, this script is not included in the project. This project can create other applications by modifying the prompt and embedding flow.
 
 ## How to Use
 
@@ -64,7 +64,7 @@ The data needs to be ingested into the vector database based on your requirement
 
 ### Customization
 
-- Replace SQLite with your preferred RDBMS by updating the database configuration and connection logic in `backend/database`.
+- Update the database configuration and connection logic in `backend/database` to replace SQLite with your preferred RDBMS.
 - Modify the embedding model by updating `backend/services/embedding_service.py`.
 
 ## Folder Structure
@@ -97,11 +97,19 @@ The data needs to be ingested into the vector database based on your requirement
 ├── requirements.txt
 ```
 
+## Screenshots
+#### Image 1 User Interface for question input and choice of LLM selection and 
+<img width="1586" alt="image" src="https://github.com/user-attachments/assets/ee81026b-d956-4a56-b561-f2e5e2b85391" />
+
+#### Image 2 Retrieving saved history
+<img width="1586" alt="image" src="https://github.com/user-attachments/assets/2e2f27b4-ca4f-4e7c-be49-c043c867b024" />
+
+
 ## Future Enhancements
 
-- Add support for additional embedding models and frameworks.
-- Extend RDBMS support for distributed databases like PostgreSQL or MySQL.
+- Support for additional embedding models including local embedding models and frameworks should be added.
 - Incorporate advanced vector retrieval techniques.
+- Add Reranking logic, RAG fusion and Multi Query Functionalities
 
 ## License
 
@@ -109,4 +117,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-Feel free to contribute to this project and share your feedback!
+Feel free to star, fork and contribute to this project and share your feedback!

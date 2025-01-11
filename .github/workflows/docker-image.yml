@@ -12,11 +12,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Install Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker-compose
       
     - name: Build and Start Containers
       working-directory: ./project # Adjust this path to the directory containing docker-compose.yml
       run: docker-compose up --build -d
-
+    
     - name: Verify Containers
       working-directory: ./project
       run: docker-compose ps

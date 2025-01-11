@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Compose CI
 
 on:
   push:
@@ -7,12 +7,25 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      
+    - name: Set up Docker Compose
+      run: |
+        docker-compose version || sudo apt-get update && sudo apt-get install docker-compose
+
+    - name: Build and Start Containers
+      run: |
+        docker-compose up --build -d
+
+    - name: Verify Containers
+      run: |
+        docker-compose ps
+
+    - name: Stop and Remove Containers
+      if: always()
+      run: |
+        docker-compose down

@@ -97,6 +97,14 @@ The data must be ingested into the vector database based on your requirements. T
 ├── requirements.txt
 ```
 
+## Screenshots
+#### Image 1 User Interface for question input and choice of LLM selection and 
+<img width="1586" alt="image" src="https://github.com/user-attachments/assets/ee81026b-d956-4a56-b561-f2e5e2b85391" />
+
+#### Image 2 Retrieving saved history
+<img width="1586" alt="image" src="https://github.com/user-attachments/assets/2e2f27b4-ca4f-4e7c-be49-c043c867b024" />
+
+
 ## Future Enhancements
 
 - Support for additional embedding models including local embedding models and frameworks should be added.

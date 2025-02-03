@@ -52,15 +52,10 @@ The data must be ingested into the vector database based on your requirements. T
 
 ### Run the Application
 
-1. Start the backend application:
-   ```bash
-   python backend/app.py
-   ```
-2. Start the UI application:
-   ```bash
-   python ui/app.py
-   ```
-3. Access the Gradio UI at `http://localhost:7860`.
+1. Start the application 
+   ``` docker compose up ```
+2. Install your choice of LLM model through Ollama
+   ```    
 
 ### Customization
 

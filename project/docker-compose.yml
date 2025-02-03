@@ -39,7 +39,7 @@ services:
 
   ollama:
     image: ollama/ollama
-    container_name: ollamaNew
+    container_name: ollama
     environment:
       - OLLAMA_MODELS=/root/.ollama/models  # Set the environment variable to the desired directory inside the container
     volumes:
